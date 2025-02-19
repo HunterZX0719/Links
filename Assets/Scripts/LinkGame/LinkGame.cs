@@ -77,6 +77,16 @@ public class LinkGame : MonoBehaviour
         BlockField.SetBlocks(controller.DataDic);
     }
 
+    public void Pause()
+    {
+        BlockField.gameObject.SetActive(false);
+    }
+
+    public void Continue()
+    {
+        BlockField.gameObject.SetActive(true);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))

@@ -11,7 +11,6 @@ public class TimeCounter : MonoBehaviour
     public Text TimeText;
     private float maxTime;
     private float currentTime;
-    private float maxWidth;
     
     private bool isCounting;
     private Action TimeZeroEvent;
@@ -20,7 +19,6 @@ public class TimeCounter : MonoBehaviour
     
     private void Awake()
     {
-        maxWidth = TimeMaxLine.rect.width;
         SetTime();
     }
 
@@ -72,7 +70,7 @@ public class TimeCounter : MonoBehaviour
     private void SetTime()
     {
         float rate = maxTime != 0 ? Mathf.Clamp(currentTime / maxTime, 0, 1) : 1;
-        float currentWidth = maxWidth * rate;
+        float currentWidth = TimeMaxLine.sizeDelta.x * rate;
         TimeLine.sizeDelta = new Vector2(currentWidth, TimeLine.sizeDelta.y);
         TimeText.text = (currentTime / 60).ToString("00") + ":" + (currentTime % 60).ToString("00");
     }

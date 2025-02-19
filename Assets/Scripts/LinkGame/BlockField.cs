@@ -19,6 +19,9 @@ public class BlockField : MonoBehaviour
 
     public float LinkLineShowTime;
     private bool allowClick;
+
+    public LineRender LineRender;
+    
     private void Awake()
     {
         layoutGroup = GetComponent<GridLayoutGroup>();
@@ -67,8 +70,24 @@ public class BlockField : MonoBehaviour
     public async void SetBlocks(List<Vector2Int> path, Dictionary<Vector2Int, Sprite> dataDic)
     {
         allowClick = false;
-        //todo:显示连接线
-        
+        Audio.Instance.Play();
+        List<Vector2Int> linePoints = new List<Vector2Int>();
+        linePoints.Add(path[0]);
+        var preDir = path[1] - path[0];
+        for (int i = 2; i < path.Count; i++)
+        {
+            var dir = path[i] - path[i - 1];
+            if (dir != preDir)
+            {
+                linePoints.Add(path[i - 1]);
+                preDir = dir;
+            }
+        }
+        linePoints.Add(path[path.Count - 1]);
+        for (int i = 1; i < linePoints.Count; i++)
+        {
+            LineRender.SetLine(blockDic[linePoints[i - 1]].transform.localPosition, blockDic[linePoints[i]].transform.localPosition, LinkLineShowTime);
+        }
         await Task.Delay((int)(LinkLineShowTime * 1000));
         SetBlocks(dataDic);
         allowClick = true;

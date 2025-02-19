@@ -27,21 +27,21 @@ public static class DifficultyHelp
         {
             case Difficulty.Easy:
                 setting.MaxTime = 3000f;
-                setting.RewardTimeRate = 0.2f;
+                setting.RewardTimeRate = 0.1f;
                 setting.StartRemaind = 100;
                 setting.RewardRemaind = 10;
-                setting.RepeatRate = 0.3f;
+                setting.RepeatRate = 0.4f;
                 break;
             case Difficulty.Normal:
                 setting.MaxTime = 2400f;
-                setting.RewardTimeRate = 0.2f;
+                setting.RewardTimeRate = 0.1f;
                 setting.StartRemaind = 10;
                 setting.RewardRemaind = 5;
                 setting.RepeatRate = 0.3f;
                 break;
             case Difficulty.Hard:
                 setting.MaxTime = 1500f;
-                setting.RewardTimeRate = 0.2f;
+                setting.RewardTimeRate = 0.1f;
                 setting.StartRemaind = 10;
                 setting.RewardRemaind = 2;
                 setting.RepeatRate = 0.2f;

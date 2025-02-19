@@ -12,12 +12,13 @@ public class GamePanel : Panel
     public Button QuitButton;
     public Button HelpButton;
     public Button SortButton;
-    //public Button PauseButton;
+    public Button PauseButton;
     
     public YesOrNoWindow WindowHelp; 
     public YesOrNoWindow WindowOvetTime; 
     public YesOrNoWindow WindowFinish; 
     public YesOrNoWindow WindowNeedPoint;
+    public YesOrNoWindow WindowPause;
     
     public LinkGame LinkGame;
     
@@ -35,6 +36,7 @@ public class GamePanel : Panel
         QuitButton.onClick.AddListener(() => WindowHelp.Show("返回主界面?", OnQuit));
         HelpButton.onClick.AddListener(OnHelp);
         SortButton.onClick.AddListener(OnResort);
+        PauseButton.onClick.AddListener(OnPause);
         LinkGame.OnLevelChangeEvent += OnLevelChange;
         LinkGame.OnGameFinish += OnGameFinish;
     }
@@ -69,6 +71,19 @@ public class GamePanel : Panel
                 PointText.text = LinkGame.point.ToString();
             });
         }
+    }
+
+    private void OnPause()
+    {
+        TimeCounter.StopCount();
+        LinkGame.Pause();
+        WindowPause.Show(Continue);
+    }
+
+    private void Continue()
+    {
+        TimeCounter.StartCount();
+        LinkGame.Continue();
     }
 
     public override Task Load()

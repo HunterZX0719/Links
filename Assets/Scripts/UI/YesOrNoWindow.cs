@@ -41,4 +41,15 @@ public class YesOrNoWindow : MonoBehaviour
         this.YesAction = yesAction;
         gameObject.SetActive(true);
     }
+    
+    public void Show(Action yesAction)
+    {
+        this.YesAction = yesAction;
+        gameObject.SetActive(true);
+    }
+    
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
 }
