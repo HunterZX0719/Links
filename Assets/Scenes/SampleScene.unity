@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlockPrefab: {fileID: 5944818783098165317, guid: 912014fddef45fd4caf62aaa4200a8b4, type: 3}
   AreaSize: {x: 16, y: 10}
-  LinkLineShowTime: 0.5
+  LinkLineShowTime: 0.2
   LineRender: {fileID: 52275912}
 --- !u!114 &282140344
 MonoBehaviour:

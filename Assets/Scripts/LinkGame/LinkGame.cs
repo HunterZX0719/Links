@@ -39,6 +39,7 @@ public class LinkGame : MonoBehaviour
         if (Enum.IsDefined(typeof(LevelType), curLevelType + 1))
         {
             curLevelType++;
+            point += GameManager.Instance.GetDifficultySetting().RewardRemaind;
             GenerateGame();
         }
         else

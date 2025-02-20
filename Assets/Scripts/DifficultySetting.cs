@@ -35,19 +35,19 @@ public static class DifficultyHelp
             case Difficulty.Normal:
                 setting.MaxTime = 2400f;
                 setting.RewardTimeRate = 0.1f;
-                setting.StartRemaind = 10;
-                setting.RewardRemaind = 5;
+                setting.StartRemaind = 20;
+                setting.RewardRemaind = 6;
                 setting.RepeatRate = 0.3f;
                 break;
             case Difficulty.Hard:
                 setting.MaxTime = 1500f;
                 setting.RewardTimeRate = 0.1f;
-                setting.StartRemaind = 10;
-                setting.RewardRemaind = 2;
+                setting.StartRemaind = 6;
+                setting.RewardRemaind = 6;
                 setting.RepeatRate = 0.2f;
                 break;
             case Difficulty.Hell:
-                setting.MaxTime = 900f;
+                setting.MaxTime = 1200f;
                 setting.RewardTimeRate = 0.1f;
                 setting.StartRemaind = 0;
                 setting.RewardRemaind = 0;

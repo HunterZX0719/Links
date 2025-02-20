@@ -108,8 +108,8 @@ public class BlockField : MonoBehaviour
         }
         else
         {
-            OnCompareBlockEvent?.Invoke(posDic[lastBlock], posDic[linkBlock]);
             lastBlock.OnDisChose();
+            OnCompareBlockEvent?.Invoke(posDic[lastBlock], posDic[linkBlock]);
             lastBlock = null;
         }
     }
